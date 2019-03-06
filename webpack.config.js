@@ -1,5 +1,5 @@
 const path = require('path')
-
+const HtmlWebpackPlugin = require('html-webpack-plugin')
 module.exports = {
   mode: 'development',
   entry: {
@@ -16,5 +16,11 @@ module.exports = {
         loader: 'awesome-typescript-loader'
       }
     ]
-  }
+  },
+  plugins: [
+    new HtmlWebpackPlugin({
+      title: 'Wheel.0',
+      template: 'index.html'
+    })
+  ]
 }
