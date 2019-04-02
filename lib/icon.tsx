@@ -1,5 +1,6 @@
 import React from 'react';
 import './importIcons';
+import './icon.scss';
 
 interface IconProps {
     name: string;
@@ -9,11 +10,9 @@ interface IconProps {
 // 它有一个属性是 IconProps
 const Icon: React.FunctionComponent<IconProps> = (props) => {
     return (
-        <span>
-            <svg>
-                <use xlinkHref={`#${props.name}`} />
-            </svg>
-        </span>
+        <svg className={"wui-icon"}>
+            <use xlinkHref={`#${props.name}`} />
+        </svg>
     );
 };
 
