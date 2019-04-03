@@ -1,6 +1,7 @@
 import React from 'react';
 import './importIcons';
 import './icon.scss';
+import classes from './helpers/classnames';
 
 interface IconProps extends React.SVGAttributes<SVGElement> {
     name: string;
@@ -9,9 +10,10 @@ interface IconProps extends React.SVGAttributes<SVGElement> {
 // Icon 是一个 React.FunctionComponet 组件
 // 它有一个属性是 IconProps
 const Icon: React.FunctionComponent<IconProps> = (props) => {
+    const {className, name,  ...rest} = props
     return (
-        <svg className={"wui-icon"} {...props}>
-            <use xlinkHref={`#${props.name}`} />
+        <svg className={classes("wui-icon", className)} {...rest}>
+            <use xlinkHref={`#${name}`} />
         </svg>
     );
 };
