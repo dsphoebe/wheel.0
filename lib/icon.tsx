@@ -9,11 +9,13 @@ interface IconProps extends React.SVGAttributes<SVGElement> {
 
 // Icon 是一个 React.FunctionComponet 组件
 // 它有一个属性是 IconProps
-const Icon: React.FunctionComponent<IconProps> = (props) => {
-    const {className, name,  ...rest} = props
+const Icon: React.FunctionComponent<IconProps> = ({className, name, ...rest}) => {
     return (
-        <svg className={classes("wui-icon", className)} {...rest}>
-            <use xlinkHref={`#${name}`} />
+        <svg
+            className={classes("wui-icon", className)}
+            {...rest}
+        >
+            <use xlinkHref={`#${name}`}/>
         </svg>
     );
 };
