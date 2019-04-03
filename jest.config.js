@@ -5,6 +5,12 @@ module.exports = {
   clearMocks: false,
   collectCoverage: false,
   reporters: ["default"],
+  
+  collectCoverage: true,
+  collectCoverageFrom: ["lib/**/*.{ts,tsx}", "!**/node_modules/**"],
+  coverageDirectory: "coverage",
+  coverageReporters: ["text", "lcov"], // text 控制台，lcov 很著名的一个分析报告
+  
   moduleFileExtensions: ["js", "jsx", "ts", "tsx"],
   moduleDirectories: ["node_modules"],
   globals: {
